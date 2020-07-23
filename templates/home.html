@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Predict Startup Success</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+   
+	<h1>Predict Startup Success</h1>
+
+     <!-- Form to enter new data for predictions  -->
+    <form action="{{ url_for('predict')}}"method="POST">
+      <input type="text" name="milestones" placeholder="Number of Milestones" required="required" /><br>
+      <input type="text" name="relationships" placeholder="Number of Relationships" required="required" /><br>
+    	<input type="text" name="Web?" placeholder="Web?" required="required" /><br>
+      <input type="text" name="Software?" placeholder="Software?" required="required" /><br>
+      <input type="text" name="Consulting?" placeholder="Consulting?" required="required" /><br>
+      <input type="text" name="Gamesvideo?" placeholder="Gamesvideo?" required="required" /><br>
+      <input type="text" name="Ecommerce?" placeholder="Ecommerce?" required="required" /><br>
+      <input type="text" name="Mobile?" placeholder="Mobile?" required="required" /><br>
+      <input type="text" name="Enterprise?" placeholder="Enterprise?" required="required" /><br>
+      <input type="text" name="Cleantech?" placeholder="Cleantech?" required="required" /><br>
+      <input type="text" name="Hardware?" placeholder="Hardware?" required="required" /><br>
+      <input type="text" name="Biotech?" placeholder="Biotech?" required="required" /><br>
+      <input type="text" name="Search?" placeholder="Search?" required="required" /><br>
+      <input type="text" name="Advertising?" placeholder="Advertising?" required="required" /><br>
+      <input type="text" name="Security?" placeholder="Security?" required="required" /><br>
+      <input type="text" name="Analytics?" placeholder="Analytics?" required="required" /><br>
+      <input type="text" name="Realestate?" placeholder="Realestate?" required="required" /><br>
+      <input type="text" name="Tech?" placeholder="Tech?" required="required" /><br>
+      <input type="text" name="funding_rounds_bin1" placeholder="funding_rounds_bin1" required="required" /><br>
+      <input type="text" name="funding_rounds_bin2" placeholder="funding_rounds_bin2" required="required" /><br>
+      <input type="text" name="funding_rounds_bin3" placeholder="funding_rounds_bin3" required="required" /><br>
+      <input type="text" name="investment_rounds_bin1" placeholder="investment_rounds_bin1" required="required" /><br>
+      <input type="text" name="investment_rounds_bin2" placeholder="investment_rounds_bin2" required="required" /><br>
+      <input type="text" name="funding_total_usd_bin1" placeholder="funding_total_usd_bin1" required="required" /><br>
+      <input type="text" name="funding_total_usd_bin2" placeholder="funding_total_usd_bin2" required="required" /><br>
+      <input type="text" name="funding_total_usd_bin3" placeholder="funding_total_usd_bin3" required="required" /><br>
+      <input type="text" name="funding_total_usd_bin4" placeholder="funding_total_usd_bin4" required="required" /><br>
+      <input type="text" name="valuation_amount_bin1" placeholder="valuation_amount_bin1" required="required" /><br>
+      <input type="text" name="valuation_amount_bin2" placeholder="valuation_amount_bin2" required="required" /><br>
+      <input type="text" name="valuation_amount_bin3" placeholder="valuation_amount_bin3" required="required" /><br>
+      <input type="text" name="valuation_amount_bin4" placeholder="valuation_amount_bin4" required="required" /><br>
+      <input type="text" name="raised_amount_bin1" placeholder="raised_amount_bin1?" required="required" /><br>
+      <input type="text" name="raised_amount_bin2" placeholder="raised_amount_bin2?" required="required" /><br>
+      <input type="text" name="raised_amount_bin3" placeholder="raised_amount_bin3?" required="required" /><br>
+      <input type="text" name="raised_amount_bin4" placeholder="raised_amount_bin4?" required="required" /><br>
+      <input type="text" name="CA" placeholder="Offices in CA?" required="required" /><br>
+      <input type="text" name="NY" placeholder="Offices in NY?" required="required" /><br>
+      <input type="text" name="TX" placeholder="Offices in TX?" required="required" /><br>
+      <input type="text" name="MA" placeholder="Offices in MA?" required="required" /><br>
+      <input type="text" name="WA" placeholder="Offices in WA?" required="required" /><br>
+      <input type="text" name="Series_A_Amount_FE" placeholder="Series_A_Amount_FE" required="required" /><br>
+      <input type="text" name="Series_B_Amount_FE" placeholder="Series_B_Amount_FE" required="required" /><br>
+      <input type="text" name="Series_C_Amount_FE" placeholder="Series_C_Amount_FE" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+  
+   
+ </div>
+ {{pred}}
+
+</body>
+</html>
+
+
