@@ -175,7 +175,7 @@ def predict():
     print(data_unseen.head())
     prediction = predict_model(model, data=data_unseen)
     prediction = int(prediction.Label[0])
-    return render_template('home.html',pred='Your selected company will reach an IPO/Acquisition {}'.format(prediction))
+    return render_template('home.html',pred='Your selected company will reach an IPO/Acquisition (1 = Yes, 0 = No) {}'.format(prediction))
 
 @app.route('/predict_api',methods=['POST'])
 def predict_api():
