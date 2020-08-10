@@ -7,8 +7,17 @@
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+<!-- Compressed CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+
+<!-- Compressed JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+
+
 <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
   
+
 </head>
 
 <body>
@@ -18,50 +27,94 @@
 
      <!-- Form to enter new data for predictions  -->
     <form action="{{ url_for('predict')}}"method="POST">
-      <input type="text" name="milestones" placeholder="Number of Milestones Achieved" required="required" /><br>
-      <input type="text" name="relationships" placeholder="Number of Relationships" required="required" /><br>
-    	<input type="text" name="Web?" placeholder="Is the Company in the Web Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Software?" placeholder="Is the Company in the Software Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Consulting?" placeholder="Is the Company in the Consulting Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Gamesvideo?" placeholder="Is the Company in the Gamesvideo Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Ecommerce?" placeholder="Is the Company in the Ecommerce Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Mobile?" placeholder="Is the Company in the Mobile Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Enterprise?" placeholder="Is the Company in the Enterprise Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Cleantech?" placeholder="Is the Company in the Cleantech Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Hardware?" placeholder="Is the Company in the Hardware Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Biotech?" placeholder="Is the Company in the Biotech Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Search?" placeholder="Is the Company in the Internet-Related Services Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Advertising?" placeholder="Is the Company in the Advertising Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Security?" placeholder="Is the Company in the Security Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Analytics?" placeholder="Is the Company in the Analytics Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Realestate?" placeholder="Is the Company in the Realestate Sector? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Tech?" placeholder="Is the Company Tech? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_rounds_bin1" placeholder="Funding Rounds Bin From -1.0 to 1.0 (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_rounds_bin2" placeholder="Funding Rounds Bin From 1.0 to 9.0 to 1.0 (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_rounds_bin3" placeholder="Funding Rounds Bin Above 9.0 (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="investment_rounds_bin1" placeholder="Investment Rounds From 0.0 to 2.0 (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="investment_rounds_bin2" placeholder="Investment Rounds Above 2.0 (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_total_usd_bin1" placeholder="Funding Total From -$1.0 to $1.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_total_usd_bin2" placeholder="Funding Total From $1.0 to $3.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_total_usd_bin3" placeholder="Funding Total From $3.0 to $1,000,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="funding_total_usd_bin4" placeholder="Funding Total Above $1,000,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="valuation_amount_bin1" placeholder="Valuation Amount From $38,599.0 to $96,750,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="valuation_amount_bin2" placeholder="Valuation Amount From $$96,750,000.0 to $315,000,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="valuation_amount_bin3" placeholder="Valuation Amount From $315,000,000.0 to $1,031,875,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="valuation_amount_bin4" placeholder="Valuation Amount Above $1,031,875,000.0 USD (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="raised_amount_bin1" placeholder="Total Raised Amount From -$1.0 to $64,250,000.0 USD? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="raised_amount_bin2" placeholder="Total Raised Amount From $64,250,000.0 to $1,050,000,000.0 USD? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="raised_amount_bin3" placeholder="Total Raised Amount From $105,000,000.0 to $224,575,000.0 USD? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="raised_amount_bin4" placeholder="Total Raised Amount Above $224,575,000.0 USD? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="CA" placeholder="Offices in CA? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="NY" placeholder="Offices in NY? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="TX" placeholder="Offices in TX? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="MA" placeholder="Offices in MA? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="WA" placeholder="Offices in WA? (1 = Yes, 0 = No)" required="required" /><br>
-      <input type="text" name="Series_A_Amount_FE" placeholder="Series A $ Amount (Dollars)" required="required" /><br>
-      <input type="text" name="Series_B_Amount_FE" placeholder="Series B $ Amount (Dollars)" required="required" /><br>
-      <input type="text" name="Series_C_Amount_FE" placeholder="Series C $ Amount (Dollars)" required="required" /><br>
 
+      <input id="milestones" type="text" name="milestones" placeholder="Number of Milestones Achieved" required="required" /><br>
+      <input id="relationships" type="text" name="relationships" placeholder="Number of Relationships" required="required" /><br>
+      
+
+      <h4> Industry Vertical </h4>
+  
+      <select name="industry_vertical">
+        <option value="">Select...</option>
+        <option value="$1">Web</option>
+        <option value="$2">Software</option>
+        <option value="$3">Consulting</option>
+        <option value="$4">Gamesvideo</option>
+        <option value="$5">Ecommerce</option>
+        <option value="$6">Mobile</option>
+        <option value="$7">Enterprise</option>
+        <option value="$8">Cleantech</option>
+        <option value="$9">Hardware</option>
+        <option value="$10">Biotech</option>
+        <option value="$11">Search</option>
+        <option value="$12">Advertising</option>
+        <option value="$13">Security</option>
+        <option value="$14">Analytics</option>
+        <option value="$15">Real Estate</option>
+        <option value="$16">Tech</option>
+      </select>
+
+      <h4> Funding Rounds </h4>
+  
+      <select name="funding_rounds">
+        <option value="">Select...</option>
+        <option value="$1">0 to 1.0</option>
+        <option value="$2">1.0 to 9.0 </option>
+        <option value="$3">Above 9.0 </option>
+      </select> 
+      
+      <h4> Investment Rounds </h4>
+  
+      <select name="investment_rounds">
+        <option value="">Select...</option>
+        <option value="$1">0.0 to 2.0</option>
+        <option value="$2">Above 2.0 </option>
+      </select> 
+
+      <h4> Funding Total </h4>
+  
+      <select name="funding_total">
+        <option value="">Select...</option>
+        <option value="$1">$0.0 to $1.0 USD</option>
+        <option value="$2">$1.0 to $3.0 USD</option>
+        <option value="$3">$3.0 to $1,000,000.0 USD</option>
+      </select> 
+
+      <h4> Valuation Total </h4>
+  
+      <select name="valuation_amount">
+        <option value="">Select...</option>
+        <option value="$1">$38,599.0 to $96,750,000.0 USD</option>
+        <option value="$2">$$96,750,000.0 to $315,000,000.0 USD</option>
+        <option value="$3">$315,000,000.0 to $1,031,875,000.0 USD</option>
+        <option value="$3">Above $1,031,875,000.0 USD</option>
+      </select> 
+      
+      <h4> Total Raised Amount</h4>
+  
+      <select name="raised_amount">
+        <option value="">Select...</option>
+        <option value="$1">$0.0 to $64,250,000.0 USD</option>
+        <option value="$2">$64,250,000.0 to $105,000,000.0 USD</option>
+        <option value="$3">$105,000,000.0 to $224,575,000.0 USD</option>
+        <option value="$4">Above $224,575,000.0 USD</option>
+      </select>
+
+      <h4> Office Location</h4>
+  
+      <select name="office_location">
+        <option value="">Select...</option>
+        <option value="$1">CA</option>
+        <option value="$2">NY</option>
+        <option value="$3">TX</option>
+        <option value="$4">MA</option>
+        <option value="$5">WA</option>
+      </select>
+
+
+      <input id="Series_A_Amount_FE" type="text" name="Series_A_Amount_FE" placeholder="Series A $ Amount (Dollars)" required="required" /><br>
+      <input id="Series_B_Amount_FE" type="text" name="Series_B_Amount_FE" placeholder="Series B $ Amount (Dollars)" required="required" /><br>
+      <input id="Series_C_Amount_FE" type="text" name="Series_C_Amount_FE" placeholder="Series C $ Amount (Dollars)" required="required" /><br>
 
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
@@ -70,11 +123,12 @@
    <br>
    <br>
   
+ 
    
+
+
  </div>
  {{pred}}
 
 </body>
 </html>
-
-
